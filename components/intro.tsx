@@ -1,7 +1,7 @@
 "use client";
 import myself from "@/public/profile-pic-4.png";
 import { useIsFontReady } from "@/lib/useIsFontReady";
-import { LIGHT_COLORS } from "@/lib/constants";
+import { LIGHT_COLORS, DARK_COLORS } from "@/lib/constants";
 import { shuffleArray } from "@/lib/shuffleArray";
 import { RainbowHighlight } from "@/components/ui/RainbowHighlight";
 
@@ -13,9 +13,11 @@ import { motion } from "framer-motion";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
+import { useTheme } from "@/context/theme-context";
 
 const Intro = () => {
   const { ref } = useSectionInView("Home");
+  const { theme } = useTheme();
 
   const isFontReady = useIsFontReady();
   const [colors, setColors] = useState<string[]>([]);
@@ -23,8 +25,12 @@ const Intro = () => {
   // Shuffle our colors and store them in state so the order is persisted during
   // React re-renders
   useEffect(() => {
-    setColors(shuffleArray(LIGHT_COLORS));
-  }, []);
+    if (theme === "light") {
+      setColors(shuffleArray(LIGHT_COLORS));
+    } else {
+      setColors(shuffleArray(DARK_COLORS));
+    }
+  }, [theme]);
 
   return (
     <section
@@ -39,8 +45,8 @@ const Intro = () => {
               src={myself}
               alt="naresh profile image"
               quality="95"
-              width="200"
-              height="200"
+              width="150"
+              height="150"
               priority={true}
               className="rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
@@ -98,7 +104,7 @@ const Intro = () => {
             >
               <a
                 href="#contact"
-                className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none"
+                className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none dark:text-white/80 dark:hover:text-white dark:focus:text-white transition-all"
               >
                 Hire me?
               </a>
@@ -117,7 +123,7 @@ const Intro = () => {
           <Link
             href="/CV.pdf"
             target="_blank"
-            className="group flex bg-white gap-2 px-7 py-3 items-center rounded-full borderBlack focus:scale-110 active:scale-105 hover:scale-110 transition-all"
+            className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
             download={true}
           >
             View Resume{" "}
@@ -125,7 +131,7 @@ const Intro = () => {
           <Link
             href="https://github.com/n-dcool"
             target="_blank"
-            className="flex bg-white gap-2 text-[1.35rem] p-4 items-center rounded-full borderBlack focus:scale-110 active:scale-105 hover:scale-110 transition-all"
+            className="flex bg-white gap-2 text-[1.35rem] p-4 items-center rounded-full borderBlack focus:scale-110 active:scale-105 hover:scale-110 transition-all dark:bg-white/10 dark:text-white/60"
           >
             <FaGithubSquare />
           </Link>

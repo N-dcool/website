@@ -21,4 +21,5 @@ export const DARK_COLORS = [
   "#38BDF8",
   "#9CA3AF",
   "#FB923C",
+  "#6c2ef2",
 ];

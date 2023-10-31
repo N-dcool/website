@@ -20,7 +20,7 @@ const Contact = () => {
       transition={{ duration: 1 }}
     >
       <SectionHeading>Contact Me</SectionHeading>
-      <p className="text-gray-700 -mt-6 inline">
+      <p className="text-gray-700 -mt-6 inline dark:text-white/80">
         I'm currently looking for new opportunities, my inbox is always open.
         Whether you have a question or just want to say hi, I'll get back to
         you! Contact me directly at{" "}
@@ -30,7 +30,7 @@ const Contact = () => {
       </a>{" "}
       or through this form.
       <form
-        className="mt-10 flex flex-col"
+        className="mt-10 flex flex-col dark:text-black"
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
 
@@ -44,14 +44,14 @@ const Contact = () => {
       >
         <input
           type="email"
-          className="h-14 rounded-lg borderBlack px-4"
+          className="h-14 rounded-lg borderBlack px-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           placeholder="Your email"
           name="email"
           required
           maxLength={50}
         />
         <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4"
+          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           placeholder="Your message"
           name="message"
           required
