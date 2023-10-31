@@ -12,10 +12,12 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { FaGithubSquare } from "react-icons/fa";
+import { useSectionInView } from "@/lib/hooks";
 
 const Intro = () => {
-  const isFontReady = useIsFontReady();
+  const { ref } = useSectionInView("Home");
 
+  const isFontReady = useIsFontReady();
   const [colors, setColors] = useState<string[]>([]);
 
   // Shuffle our colors and store them in state so the order is persisted during
@@ -26,6 +28,7 @@ const Intro = () => {
 
   return (
     <section
+      ref={ref}
       id="home"
       className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
@@ -107,14 +110,14 @@ const Intro = () => {
           <a
             href="https://www.linkedin.com/in/n-dcool/"
             target="_blank"
-            className="group flex bg-gray-900 text-white gap-2 px-7 py-3 items-center rounded-full focus:scale-110 active:scale-0 hover:scale-110 hover:bg-gray-950 transition-all"
+            className="group flex bg-gray-900 text-white gap-2 px-7 py-3 items-center rounded-full focus:scale-110 active:scale-105 hover:scale-110 hover:bg-gray-950 transition-all"
           >
             View Linkedin
           </a>
           <Link
             href="/CV.pdf"
             target="_blank"
-            className="group flex bg-white gap-2 px-7 py-3 items-center rounded-full border border-black/10 focus:scale-110 active:scale-0 hover:scale-110 transition-all"
+            className="group flex bg-white gap-2 px-7 py-3 items-center rounded-full borderBlack focus:scale-110 active:scale-105 hover:scale-110 transition-all"
             download={true}
           >
             View Resume{" "}
@@ -122,7 +125,7 @@ const Intro = () => {
           <Link
             href="https://github.com/n-dcool"
             target="_blank"
-            className="flex bg-white gap-2 text-[1.35rem] p-4 items-center rounded-full border border-black/10 focus:scale-110 active:scale-0 hover:scale-110 transition-all"
+            className="flex bg-white gap-2 text-[1.35rem] p-4 items-center rounded-full borderBlack focus:scale-110 active:scale-105 hover:scale-110 transition-all"
           >
             <FaGithubSquare />
           </Link>

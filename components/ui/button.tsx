@@ -1,17 +1,25 @@
-import Link from "next/link";
+import { FaPaperPlane } from "react-icons/fa";
+// @ts-ignore
+import { experimental_useFormStatus as useFormStatus } from "react-dom";
 
-export const Button = ({
-  children,
-  href,
-}: {
-  href: string;
-} & Omit<React.HTMLProps<HTMLAnchorElement>, "href">) => {
+const SubmitButton = () => {
+  const { pending } = useFormStatus();
+
   return (
-    <Link
-      href={href}
-      className="block px-8 py-2 text-center text-white transition duration-200 bg-gray-900 border border-transparent rounded hover:bg-white hover:text-gray-800 hover:border-gray-800 focus:outline-none"
+    <button
+      type="submit"
+      className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none focus:scale-110 active:scale-105 hover:scale-110 transition-all disabled:opacity-65 disabled:cursor-not-allowed disabled:scale-100 disabled:hover:scale-100"
+      disabled={pending}
     >
-      {children}
-    </Link>
+      {pending ? (
+        <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+      ) : (
+        <>
+          Submit{" "}
+          <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
+        </>
+      )}
+    </button>
   );
 };
+export default SubmitButton;
