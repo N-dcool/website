@@ -1,6 +1,6 @@
 "use server";
 import { validateString } from "@/lib/validateString";
-import ContactFormEmail from "@/email/contact-form-email";
+import { ContactFormEmail } from "@/email/contact-form-email";
 import React from "react";
 
 import { Resend } from "resend";
@@ -26,7 +26,7 @@ export const sendEmail = async (formData: FormData) => {
 
   try {
     data = await resend.emails.send({
-      from: "🧑🏻‍💻Portfolio message box <onboarding@resend.dev>",
+      from: "Portfolio message box <onboarding@resend.dev>",
       to: "nareshnc82643@gmail.com",
       subject: "Hello from Resend",
       reply_to: senderEmail as string,
