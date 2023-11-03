@@ -33,10 +33,10 @@ export default function RootLayout({
             <Header />
             {children}
             <Toaster position="top-right" />
-            <Footer />
             <ThemeSwitch />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
+        <Footer />
       </body>
     </html>
   );
