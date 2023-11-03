@@ -1,7 +1,8 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
+import { FaSchoolCircleCheck } from "react-icons/fa6";
+import { FaUserGraduate } from "react-icons/fa";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
@@ -35,28 +36,28 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "High School",
+    location: "Shri Bhairavnath jr. college - Pune",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2019",
+      "I completed my high school in Pune, India. I studied science with computer science as an elective subject.",
+    icon: React.createElement(FaSchoolCircleCheck),
+    date: "2018-19",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Bachelor's Degree",
+    location: "Government College of Engg. and research - Pune",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+      "I maintained a strong CGPA above 8 during my B.E. in Electronics and Telecommunication while simultaneously mastering technologies like React, JavaScript, TypeScript, and blockchain, creating awesome projects along the way.",
+    icon: React.createElement(FaUserGraduate),
+    date: "2019 - 2023",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "Assistence Software Engineer - TCS Digital",
+    location: "Hinjevadi, Pune",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "Awaiting my TCS-Digital joining as an Assistant Software Engineer while actively exploring job opportunities in a challenging job market with ongoing layoffs.",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "2023 - present",
   },
 ] as const;
 
@@ -93,15 +94,16 @@ export const skillsData = [
   "Next.js",
   "Node.js",
   "Git",
+  "Solidity",
+  "Hardhat",
+  "Ganache",
   "Tailwind",
   "Prisma",
   "MongoDB",
   "Redux",
-  "GraphQL",
-  "Apollo",
+  "REST API",
   "Express",
   "PostgreSQL",
-  "Python",
-  "Django",
+  "Java",
   "Framer Motion",
 ] as const;

@@ -52,7 +52,7 @@ const Intro = () => {
             />
           </div>
           <motion.span
-            className="absolute text-4xl bottom-[1rem] right-[1rem]"
+            className="absolute text-2xl sm:text-4xl bottom-[1rem] right-[1rem]"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -68,11 +68,11 @@ const Intro = () => {
       </div>
 
       <RoughNotationGroup show={isFontReady}>
-        <h1 className="mb-10 mt-4 px-4 text-2xl !leading-[1.5] sm:text-4xl">
+        <h1 className="mb-10 mt-4 px-4 !leading-[1.5] sm:text-4xl">
           <span className="font-semibold">Hello 👋, I'm Naresh, </span> a{" "}
           <RainbowHighlight color={colors[0]}>developer</RainbowHighlight> based
           in <span className="font-semibold">India 🇮🇳.</span>
-          <p className="text-[1.3rem]">
+          <p className="sm:text-[1.3rem]">
             I love building tools that are{" "}
             <RainbowHighlight color={colors[1]}>
               user-friendly, simple
@@ -80,7 +80,7 @@ const Intro = () => {
             and{" "}
             <RainbowHighlight color={colors[2]}>delightful</RainbowHighlight>.
           </p>
-          <p className="text-[1.3rem]">
+          <p className="sm:text-[1.3rem]">
             I am a{" "}
             <RainbowHighlight color={colors[6]}>self-taught</RainbowHighlight>{" "}
             developer, I have spent 2 years learning the fundamentals of{" "}
@@ -90,7 +90,7 @@ const Intro = () => {
             </RainbowHighlight>
             .
           </p>
-          <p className="text-[1.3rem]">
+          <p className="sm:text-[1.3rem]">
             I'm currently looking for a new role as a developer.{" "}
             <RoughNotation
               type="circle"
